@@ -3,7 +3,7 @@ import {StyleProp, TouchableOpacity} from 'react-native'
 import FastImage, {ImageStyle} from 'react-native-fast-image'
 import equals from 'react-fast-compare'
 import {isNumber, isFunction} from 'lodash'
-
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import images from 'assets/images'
 import {useTheme} from 'contextAPI/ThemeContext'
 import {enhance} from 'utils/handleStyles'

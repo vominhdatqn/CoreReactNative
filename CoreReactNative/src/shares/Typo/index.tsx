@@ -13,7 +13,7 @@ import {TypoPresets} from './preset'
 import {FontDefault} from 'shares/GlobalStyles/typography'
 
 const TypoComponent: React.FC<TypoProps> = ({
-  tx,
+  tx = '',
   txOptions,
   text,
   children,
@@ -45,7 +45,7 @@ const TypoComponent: React.FC<TypoProps> = ({
   // memoized
   const content = useMemo(() => {
     return text || children || t(tx)
-  }, [text, children, tx])
+  }, [text, children, tx, t])
 
   const styleComponent = useMemo(
     () =>
@@ -61,6 +61,7 @@ const TypoComponent: React.FC<TypoProps> = ({
           semiBold && {fontWeight: '600', fontFamily: FontDefault.PrimarySemibold},
           regular && {fontWeight: '500', fontFamily: FontDefault.PrimaryRegular},
           solid && {fontWeight: '400'},
+
           propsToStyle([
             {fontWeight},
             disabled ? {opacity: 0.1} : {color},
@@ -81,7 +82,6 @@ const TypoComponent: React.FC<TypoProps> = ({
       fontFamily,
       color,
       colorTheme,
-      theme.colors,
       center,
       textAlign,
       textTransform,
@@ -93,6 +93,7 @@ const TypoComponent: React.FC<TypoProps> = ({
       semiBold,
       regular,
       solid,
+      theme,
     ],
   )
 

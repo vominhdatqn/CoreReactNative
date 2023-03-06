@@ -4,7 +4,7 @@ import equals from 'react-fast-compare'
 import {useTheme} from 'contextAPI/ThemeContext'
 import colors from 'themes/colors'
 import {DividerProps} from './type'
-
+//duong gach ngang --------------
 const DividerComponent: FC<DividerProps> = ({
   height = StyleSheet.hairlineWidth,
   width = '100%',
