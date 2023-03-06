@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Manrope-Bold.ttf",
+      "sha1": "fd4744b003e034fdf9ff433985088600ed4c6b19"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Medium.ttf",
+      "sha1": "fcafcd59b8a4a2fd66b28434307e2bb0d8f0f1c9"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Regular.ttf",
+      "sha1": "7e862264836329a059f38d0fc66b22a4936402e8"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-SemiBold.ttf",
+      "sha1": "96b5b6af6b63a1f74978e1e10ff3471304a7de46"
+    },
+    {
+      "path": "src/assets/fonts/SF-Pro-Text-Bold.otf",
+      "sha1": "31c1cfc1c81b5bff7b68e0a5036a82ef6d032a9f"
+    },
+    {
+      "path": "src/assets/fonts/SF-Pro-Text-Medium.otf",
+      "sha1": "cf7e58159847741dc2344e71fa3377144395d29a"
+    },
+    {
+      "path": "src/assets/fonts/SF-Pro-Text-Regular.otf",
+      "sha1": "9c14ea911a94bcb0179cb884b07affb88de49a84"
+    },
+    {
+      "path": "src/assets/fonts/SF-Pro-Text-Semibold.otf",
+      "sha1": "64fb7dfffe9bd98e4f5cc3b346b0d4c517dd6fde"
+    }
+  ]
+}

@@ -2,10 +2,32 @@
 
 #import <React/RCTBundleURLProvider.h>
 
+// react-native-flipper-performance-plugin
+#ifdef FB_SONARKIT_ENABLED
+#import <FlipperKit/FlipperClient.h>
+# import <FlipperPerformancePlugin.h>
+#endif
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // react-native-flipper-performance-plugin
+  #ifdef FB_SONARKIT_ENABLED
+    FlipperClient *client = [FlipperClient sharedClient];
+    [client addPlugin:[FlipperPerformancePlugin new]];
+  #endif
+
+  for (NSString* family in [UIFont familyNames])
+  {
+      NSLog(@"%@", family);
+
+      for (NSString* name in [UIFont fontNamesForFamilyName: family])
+      {
+          NSLog(@"Family name:  %@", name);
+      }
+  }
+
   self.moduleName = @"CoreReactNative";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
