@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "AmazonClone"
+  },
+  "dnt": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "AmazonClone"
+  },
+  "corednt": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "CoreDnt"
+  }
+}

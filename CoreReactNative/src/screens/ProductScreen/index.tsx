@@ -8,18 +8,13 @@ import Quantity from 'screens/components/Quantity'
 import {Picker} from '@react-native-picker/picker'
 import ImageProduct from 'screens/components/ImageProduct'
 const ProductScreen = () => {
-  const [selectedOption, setSelectedOption] = useState('')
-  // console.log(selectedOption)
+  const [product, setProduct] = useState<Product | undefined>(undefined)
   const [quantity, setQuantity] = useState(1)
   return (
-    <Block padding={10} bgColor="white">
-      <Typo>{product.title}</Typo>
-      <ImageProduct images={product.images} />
-      <Picker selectedValue={selectedOption} onValueChange={itemValue => setSelectedOption(itemValue)}>
-        {product.options.map(option => (
-          <Picker.Item label={option} value={option} />
-        ))}
-      </Picker>
+    <ScrollView style={styles.container}>
+      <Typo>{product?.title}</Typo>
+      <ImageProduct images={product?.images} />
+      <OptionPicker product={product} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
       <Block row>
         <Typo fontWeight="bold" fontSize="FONT_18">
           from ${product.price}
@@ -29,24 +24,36 @@ const ProductScreen = () => {
         </Typo>
       </Block>
       <Block mVer={10}>
-        <Typo lineHeight={20}>{product.description}</Typo>
+        <Typo lineHeight={20}>{product?.description}</Typo>
       </Block>
       <Quantity quantity={quantity} setQuantity={setQuantity} />
       <ButtonMin
         text={'Add to cart'}
-        onPress={() => {
-          console.warn('Add to cart')
-        }}
+        onPress={() => handleAddToCart(quantity, selectedOption)}
         containerStyles={{backgroundColor: '#e3c905'}}
       />
       <ButtonMin
         text={'Buy now'}
         onPress={() => {
-          console.warn('Buy now')
+          console.log('checkout')
         }}
       />
-    </Block>
+    </ScrollView>
   )
 }
-
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+    backgroundColor: 'white',
+  },
+  price: {
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+  oldPrice: {
+    fontSize: 12,
+    fontWeight: 'normal',
+    textDecorationLine: 'line-through',
+  },
+})
 export default ProductScreen
